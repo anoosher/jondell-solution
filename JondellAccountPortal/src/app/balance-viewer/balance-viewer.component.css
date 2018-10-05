@@ -1,0 +1,30 @@
+.balance-card {
+    max-width: 300px;
+    min-width: 200px;
+  }
+  
+  .balance-header-image {
+    background-image: url('https://cdn2.iconfinder.com/data/icons/commerce-roundline/512/prices-512.png');
+    background-size: cover;
+  }
+
+  .horizontal-cards
+  {
+    list-style-type: none;
+      height: 300px;
+      float: left;
+  }
+
+  .horizontal-cards li
+  {
+    float: left;
+    list-style: none;
+    position: relative;
+  }
+
+  .balance-card-container
+  {
+    height: 300px;
+    display: block;
+    padding-top: 20px;
+  }

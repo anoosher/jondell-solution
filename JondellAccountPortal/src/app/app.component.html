@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <div style="text-align:center">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+            <span>Jondell Account Portal</span>
+                <span class="example-fill-remaining-space"></span>
+                <span class="align-center"></span>
+                <span class="example-spacer"></span>
+                <button mat-button>About</button>
+                <button mat-button>Contact</button>
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <div *ngIf="isLoggedIn(); then loogedin else loggedout" ></div>
+                <ng-template #loggedout></ng-template>
+                <ng-template #loogedin>
+                  <span mat-menu-item>{{username}}</span>
+                  <button mat-menu-item>
+                      <mat-icon>exit-to-app</mat-icon>
+                      <a (click)="logOut()">Log out</a>
+                    </button>
+                </ng-template>     
+            </mat-menu> 
+             </mat-toolbar-row>
+             </mat-toolbar>
+        
+       
+            <router-outlet></router-outlet>
+            
+  </div>
+

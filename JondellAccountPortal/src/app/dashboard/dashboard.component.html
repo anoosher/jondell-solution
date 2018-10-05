@@ -1,0 +1,13 @@
+<div [ngSwitch]="role">
+    <div *ngSwitchCase="'Admin'">
+        <app-file-upload></app-file-upload>
+        <app-account-history></app-account-history>
+    </div>
+    <div *ngSwitchCase="'User'">
+        <app-balance-viewer></app-balance-viewer>    
+    </div>    
+</div>
+
+
+
+

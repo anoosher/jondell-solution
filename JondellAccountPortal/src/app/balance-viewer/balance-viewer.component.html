@@ -1,0 +1,35 @@
+<mat-card class="dashboard-card">
+  <mat-card-header>
+    <mat-card-title>
+      Latest Balances
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="dashboard-card-content">
+
+
+    <div *ngIf="latestMonthlyBalance.month!=null;then content else nocontent"></div>
+    <ng-template #nocontent>No data found...</ng-template>
+    <ng-template #content>
+      <mat-toolbar>
+        <span>Balance as of {{latestMonthlyBalance.month}}</span>
+      </mat-toolbar>
+    </ng-template>
+    <div class="balance-card-container">
+    <ul *ngFor="let balance of latestMonthlyBalance.accountBalances" class="horizontal-cards">
+      <li>
+        <mat-card class="balance-card">
+          <mat-card-header>
+            <div mat-card-avatar class="balance-header-image"></div>
+            <mat-card-title>{{balance.displayAccountName}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <h4>
+              {{balance.displayAccountBalance}}
+            </h4>
+          </mat-card-content>
+        </mat-card>
+      </li>
+    </ul>
+  </div>
+  </mat-card-content>
+</mat-card>
